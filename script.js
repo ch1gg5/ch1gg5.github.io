@@ -1,84 +1,358 @@
-// Checks whether the CV PDF is present in the repo, then plays a short
-// "deploy log" sequence in the terminal panel reflecting the real result.
-// This is also the update mechanism: replace Daniel_Chigbu_CV.pdf in the
-// repo root and this panel (and the download button) update automatically.
+:root {
+  --bg: #0B0E14;
+  --panel: #141A24;
+  --panel-border: #232B38;
+  --text: #E7EAF0;
+  --text-muted: #8B93A1;
+  --accent-green: #4ADE80;
+  --accent-amber: #F0A868;
+  --font-display: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
 
-(async function () {
-  const CV_PATH = "Daniel_Chigbu_CV.pdf";
-  const body = document.getElementById("terminal-body");
-  const viewBtn = document.getElementById("cv-view");
-  const downloadBtn = document.getElementById("cv-download");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+* { box-sizing: border-box; }
 
-  let cvExists = false;
-  try {
-    const res = await fetch(CV_PATH, { method: "HEAD", cache: "no-store" });
-    cvExists = res.ok;
-  } catch (e) {
-    cvExists = false;
-  }
+html { scroll-behavior: smooth; }
 
-  if (!cvExists) {
-    [viewBtn, downloadBtn].forEach((btn) => {
-      btn.setAttribute("aria-disabled", "true");
-      btn.removeAttribute("download");
-      btn.removeAttribute("target");
-      btn.href = "#";
-    });
-    viewBtn.querySelector("span").textContent = "CV coming soon";
-    downloadBtn.style.display = "none";
-  }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
 
-  const lines = [
-    { text: "$ ./deploy.sh cv", cls: "plain" },
-    { text: "> compiling profile...", cls: "" },
-    { text: "> resolving dependencies (4 projects, 3 languages)", cls: "" },
-    { text: "> running tests... 12/12 passed", cls: "ok" },
-    cvExists
-      ? { text: "> build succeeded — cv.pdf ready", cls: "ok" }
-      : { text: "> build failed — cv.pdf not found in repo root", cls: "warn" },
-  ];
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
-  if (!cvExists) {
-    lines.push({
-      text: "> fix: add Daniel_Chigbu_CV.pdf to the repository root and redeploy",
-      cls: "warn",
-    });
-  }
+a { color: inherit; }
 
-  if (reduceMotion) {
-    body.innerHTML = lines
-      .map((l) => `<span class="${l.cls}">${l.text}</span>`)
-      .join("\n");
-    return;
-  }
+/* subtle grain for texture without relying on gradients */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 
-  // Typed-out animation, line by line.
-  for (const line of lines) {
-    await typeLine(body, line.text, line.cls);
-    body.innerHTML += "\n";
-  }
-  const cursor = document.createElement("span");
-  cursor.className = "cursor";
-  body.appendChild(cursor);
+/* ---------- Hero ---------- */
+.hero {
+  padding: 120px 0 72px;
+  border-bottom: 1px solid var(--panel-border);
+}
 
-  async function typeLine(el, text, cls) {
-    return new Promise((resolve) => {
-      const span = document.createElement("span");
-      span.className = cls;
-      el.appendChild(span);
-      let i = 0;
-      const speed = 14;
-      const tick = () => {
-        span.textContent += text[i];
-        i++;
-        if (i < text.length) {
-          setTimeout(tick, speed);
-        } else {
-          resolve();
-        }
-      };
-      tick();
-    });
-  }
-})();
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  letter-spacing: 0.02em;
+  margin: 0 0 18px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+}
+
+.tagline {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin: 0 0 40px;
+}
+
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 13px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent-amber);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background: var(--accent-green);
+  color: #0B0E14;
+}
+.btn-primary:hover { background: #6EE79E; transform: translateY(-1px); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--panel-border);
+}
+.btn-secondary:hover { border-color: var(--accent-amber); color: var(--accent-amber); transform: translateY(-1px); }
+
+/* ---------- Terminal ---------- */
+.terminal-section { padding: 56px 0 8px; }
+
+.terminal {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot-r { background: #E5626B; }
+.dot-y { background: #E5B95C; }
+.dot-g { background: #5CC98A; }
+
+.terminal-title {
+  margin-left: 8px;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.terminal-body {
+  margin: 0;
+  padding: 20px 22px 26px;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 168px;
+}
+
+.terminal-body .ok { color: var(--accent-green); }
+.terminal-body .warn { color: var(--accent-amber); }
+.terminal-body .plain { color: var(--text); }
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: var(--accent-green);
+  vertical-align: text-bottom;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- Sections ---------- */
+.section-head { margin-bottom: 28px; }
+.section-head h2 {
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.about { padding: 88px 0 24px; }
+.about-copy { color: var(--text-muted); max-width: 68ch; font-size: 1.02rem; }
+
+.stack-pills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 28px 0 0;
+}
+.stack-pills li {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--text);
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  padding: 7px 13px;
+  border-radius: 100px;
+}
+
+.experience { padding: 64px 0 24px; }
+
+.experience-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.experience-item {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-left: 2px solid var(--accent-green);
+  border-radius: 8px;
+  padding: 22px 24px;
+  transition: border-color 0.15s ease;
+}
+.experience-item:hover { border-color: var(--accent-green); }
+
+.exp-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  margin-bottom: 12px;
+}
+
+.exp-head h3 {
+  font-size: 1.02rem;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.exp-meta {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.exp-bullets {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+.exp-bullets li + li { margin-top: 6px; }
+
+.projects { padding: 64px 0 96px; }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.project-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease;
+}
+.project-card:hover { border-color: var(--accent-green); }
+
+.project-index {
+  font-family: var(--font-display);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  margin: 0 0 14px;
+}
+
+.project-card h3 {
+  font-size: 1.05rem;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.project-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  flex-grow: 1;
+  margin: 0 0 18px;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0 0 18px;
+}
+.tags li {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  color: var(--accent-green);
+  border: 1px solid var(--panel-border);
+  padding: 4px 9px;
+  border-radius: 100px;
+}
+
+.card-link {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--text);
+  border-top: 1px solid var(--panel-border);
+  padding-top: 14px;
+  margin-top: auto;
+}
+.card-link:hover { color: var(--accent-amber); }
+.card-link:focus-visible { outline: 2px solid var(--accent-amber); outline-offset: 3px; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--panel-border);
+  padding: 40px 0 56px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-name { font-family: var(--font-display); margin: 0; font-size: 0.95rem; }
+.footer-sub { color: var(--text-muted); margin: 4px 0 0; font-size: 0.85rem; }
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+}
+.footer-links a { text-decoration: none; color: var(--text-muted); }
+.footer-links a:hover { color: var(--accent-green); }
+.footer-links a:focus-visible { outline: 2px solid var(--accent-amber); outline-offset: 3px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .hero { padding: 88px 0 56px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .footer-grid { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cursor { animation: none; opacity: 1; }
+  .btn, .project-card, .card-link { transition: none; }
+}
