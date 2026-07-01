@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Chigbu — Computer Science, Loughborough</title>
+<meta name="description" content="Daniel Chigbu — Computer Science undergraduate at Loughborough University. Backend and full-stack projects in Java, Spring Boot and PostgreSQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">$ whoami</p>
+    <h1 class="name">Daniel Chigbu</h1>
+    <p class="tagline">Computer Science @ Loughborough University — building full-stack systems, one deploy at a time.</p>
+
+    <div class="cta-row">
+      <a href="Daniel_Chigbu_CV.pdf" class="btn btn-primary" id="cv-download" download>
+        <span>Download CV</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 12.5v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://github.com/ch1gg5" class="btn btn-secondary" target="_blank" rel="noopener">
+        <span>View GitHub</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="terminal-section wrap" aria-label="CV build status">
+    <div class="terminal" role="status">
+      <div class="terminal-bar">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="terminal-title">deploy.sh</span>
+      </div>
+      <pre class="terminal-body" id="terminal-body" aria-live="polite"></pre>
+    </div>
+  </section>
+
+  <section class="about wrap">
+    <div class="section-head">
+      <p class="eyebrow">01 — profile</p>
+      <h2>Currently compiling a CS degree</h2>
+    </div>
+    <p class="about-copy">
+      First-year Computer Science student at Loughborough University, graduating 2029. I spend most of my time
+      outside lectures shipping backend systems — layered Spring Boot architectures, relational schemas, and the
+      CI/CD pipelines that deploy them. Recently deep in Spring Security, JWT auth, and PostgreSQL schema design.
+    </p>
+
+    <ul class="stack-pills" aria-label="Technologies">
+      <li>Java</li><li>Python</li><li>Spring Boot</li><li>Spring Security</li><li>PostgreSQL</li>
+      <li>JPA / Hibernate</li><li>Docker</li><li>JWT</li><li>Apache Kafka</li><li>Git</li>
+    </ul>
+  </section>
+
+  <section class="projects wrap">
+    <div class="section-head">
+      <p class="eyebrow">02 — projects</p>
+      <h2>Things I've deployed</h2>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card">
+        <p class="project-index">01</p>
+        <h3>Coursework Deadline Optimiser</h3>
+        <p>Full-stack coursework management app with JWT authentication, role-based access control, and a
+          scheduling algorithm that allocates study time across a 60-day window by deadline urgency and course
+          weighting. Deployed on Render with GitHub-triggered CI/CD.</p>
+        <ul class="tags">
+          <li>Spring Boot</li><li>PostgreSQL</li><li>JWT</li><li>CI/CD</li>
+        </ul>
+        <a href="https://github.com/ch1gg5" class="card-link" target="_blank" rel="noopener">View repo →</a>
+      </article>
+
+      <article class="project-card">
+        <p class="project-index">02</p>
+        <h3>Board Game Management System</h3>
+        <p>End-to-end e-commerce system with inventory management, multi-method payments, and role-based CLI
+          interfaces for admins and customers. Modular OOP architecture across five packages.</p>
+        <ul class="tags">
+          <li>Java</li><li>OOP</li><li>CLI</li>
+        </ul>
+        <a href="https://github.com/ch1gg5" class="card-link" target="_blank" rel="noopener">View repo →</a>
+      </article>
+
+      <article class="project-card">
+        <p class="project-index">03</p>
+        <h3>Loughborough Route Finder</h3>
+        <p>A* pathfinding with a Euclidean heuristic for optimised campus routing, with obstacle avoidance and
+          multi-waypoint support. Graph visualisation built with NetworkX and Matplotlib.</p>
+        <ul class="tags">
+          <li>Python</li><li>A* Search</li><li>NetworkX</li>
+        </ul>
+        <a href="https://github.com/ch1gg5" class="card-link" target="_blank" rel="noopener">View repo →</a>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-name">Daniel Chigbu</p>
+      <p class="footer-sub">Computer Science, Loughborough University</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:d.j.chigbu@gmail.com">d.j.chigbu@gmail.com</a></li>
+      <li><a href="https://linkedin.com/in/danchigbu" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/ch1gg5" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
