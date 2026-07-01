@@ -6,6 +6,7 @@
 (async function () {
   const CV_PATH = "Daniel_Chigbu_CV.pdf";
   const body = document.getElementById("terminal-body");
+  const viewBtn = document.getElementById("cv-view");
   const downloadBtn = document.getElementById("cv-download");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -18,10 +19,14 @@
   }
 
   if (!cvExists) {
-    downloadBtn.setAttribute("aria-disabled", "true");
-    downloadBtn.removeAttribute("download");
-    downloadBtn.href = "#";
-    downloadBtn.querySelector("span").textContent = "CV coming soon";
+    [viewBtn, downloadBtn].forEach((btn) => {
+      btn.setAttribute("aria-disabled", "true");
+      btn.removeAttribute("download");
+      btn.removeAttribute("target");
+      btn.href = "#";
+    });
+    viewBtn.querySelector("span").textContent = "CV coming soon";
+    downloadBtn.style.display = "none";
   }
 
   const lines = [
