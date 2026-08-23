@@ -22,4 +22,4 @@ Once the prompt behaved, we moved it into Antigravity to wire up the surrounding
 
 We didn't stop at a working demo. Part of the pitch was sizing whether RoomQuest-shaped products were worth building at all: we put the addressable market at roughly $14.8B TAM, narrowing to a $3.53B SAM for the specific escape-room/team-building segment we were targeting. Presenting market sizing alongside a live technical demo forced the technical choices to answer to something outside the room: not "can we build this," but "should this exist."
 
-We placed 1st in the Accessibility Track. The bigger lesson traveled with me past the hackathon: an aggressive deadline is a scoping tool, not just a source of stress, if you're willing to actually use it as one.
+
