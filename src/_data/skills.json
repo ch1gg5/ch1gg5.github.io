@@ -50,7 +50,8 @@
       "points": [
         "Building an AI-powered planning platform that turns learning and career goals into phased, adaptive roadmaps.",
         "Built full-stack: React/TypeScript frontend, Python/FastAPI backend, PostgreSQL, authentication, and Gemini API integration.",
-        "Shipped all 8 planned build phases with 675 passing tests."
+        "Shipped all 8 planned build phases with 675 passing tests.",
+        "Deployed at kaidoro.app; running private, access-code-gated testing ahead of a public launch once the system is scaled."
       ]
     },
     {

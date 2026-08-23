@@ -3,9 +3,11 @@
     "slug": "kaidoro",
     "path": "./kaidoro/roadmap.tsx",
     "title": "Kaidoro",
-    "description": "Founder & Software Engineer. An AI-powered planning platform that turns learning and career goals into phased, adaptive roadmaps, with one canonical structure viewable three ways: an Excel checklist, an interactive node graph, and a self-paced course. Full-stack build: React/TypeScript frontend, Python/FastAPI backend, PostgreSQL, authentication and Gemini API integration.",
-    "tags": ["React", "TypeScript", "FastAPI", "PostgreSQL", "Gemini API"],
-    "links": [],
+    "description": "Founder & Software Engineer. An AI-powered planning platform that turns learning and career goals into phased, adaptive roadmaps, with one canonical structure viewable three ways: an Excel checklist, an interactive node graph, and a self-paced course. Full-stack build: React/TypeScript frontend, Python/FastAPI backend, PostgreSQL, authentication and Gemini API integration. Live at kaidoro.app in private testing (access-code gated), opening to the public once the system is scaled.",
+    "tags": ["React", "TypeScript", "FastAPI", "PostgreSQL", "Gemini API", "Vertex AI", "Google Cloud"],
+    "links": [
+      { "url": "https://kaidoro.app", "label": "Private Beta" }
+    ],
     "featured": true
   },
   {
