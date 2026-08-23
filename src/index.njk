@@ -1,0 +1,81 @@
+---
+layout: layouts/base.njk
+---
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <p class="sheet-label fade-in">SHEET 01 · OVERVIEW</p>
+      <h1 class="hero-heading fade-in">
+        LEARN. EXPERIMENT.<br>
+        <span class="accent">SHIP. REPEAT.</span>
+      </h1>
+      <p class="hero-tagline fade-in">
+        Founder & software engineer building Kaidoro, an AI-powered planning platform,
+        alongside a CS degree at Loughborough focused on scalable backend architectures
+        and AI-assisted development.
+      </p>
+      <div class="hero-cta fade-in">
+        <a href="/projects/" class="btn btn-blue">View Projects</a>
+        <a href="{{ site.cv }}" class="btn btn-redline" target="_blank" rel="noopener">Resume.pdf →</a>
+      </div>
+    </div>
+    <div class="hero-right fade-in">
+      {% include "partials/schematic-diagram.njk" %}
+      <div class="schematic-diagram-spacer"></div>
+      {% include "partials/schematic-diagram-ml.njk" %}
+    </div>
+  </div>
+</header>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="section-header">
+      <div>
+        <p class="sheet-label fade-in">SHEET 02 · DEPLOYMENTS</p>
+        <h2 class="fade-in">Featured Projects</h2>
+      </div>
+      <a href="/projects/" class="view-all-link fade-in">All projects →</a>
+    </div>
+    <div class="panel-grid stagger-children">
+      {% for project in projects %}
+        {% if project.featured %}
+          <div class="fade-in" style="--i:{{ loop.index0 }}">
+            {% include "partials/project-card.njk" %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-header">
+      <div>
+        <p class="sheet-label fade-in">SHEET 03 · FIELD NOTES</p>
+        <h2 class="fade-in">Latest from the Blog</h2>
+      </div>
+      <a href="/blog/" class="view-all-link fade-in">All entries →</a>
+    </div>
+    <div class="panel-grid two-col stagger-children">
+      {% for post in collections.posts | reverse %}
+        {% if loop.index0 < 2 %}
+          <div class="fade-in" style="--i:{{ loop.index0 }}">
+            {% include "partials/post-card.njk" %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section about-teaser">
+  <div class="wrap">
+    <p class="sheet-label fade-in">SHEET 04 · PROFILE</p>
+    <p class="about-teaser-text fade-in">
+      Founder & Software Engineer building Kaidoro, and a CS student at Loughborough University
+      with interests in AI/ML and quantitative finance.
+      <a href="/about/" class="card-link">Read the full profile →</a>
+    </p>
+  </div>
+</section>

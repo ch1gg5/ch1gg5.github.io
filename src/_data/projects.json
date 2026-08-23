@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "kaidoro",
+    "path": "./kaidoro/roadmap.tsx",
+    "title": "Kaidoro",
+    "description": "Founder & Software Engineer. An AI-powered planning platform that turns learning and career goals into phased, adaptive roadmaps, with one canonical structure viewable three ways: an Excel checklist, an interactive node graph, and a self-paced course. Full-stack build: React/TypeScript frontend, Python/FastAPI backend, PostgreSQL, authentication and Gemini API integration.",
+    "tags": ["React", "TypeScript", "FastAPI", "PostgreSQL", "Gemini API"],
+    "links": [],
+    "featured": true
+  },
+  {
+    "slug": "roomquest",
+    "path": "./hackathon/room_quest.tsx",
+    "title": "RoomQuest",
+    "description": "Selected as 1 of 52 participants from 1,000 applicants for a Google-run AI hackathon. Led a 5-person team at the Google Student AI Hackathon (London), building a working demo that generates room-aware puzzle clues via Gemini multimodal vision in under 5 seconds through an AI Studio → Antigravity → Google Cloud workflow, then presenting a go-to-market strategy alongside the technical demo.",
+    "tags": ["React", "TypeScript", "Gemini API", "Google Antigravity"],
+    "links": [
+      { "url": "https://github.com/zidanefrost/pocket_detective", "label": "Source" },
+      { "url": "https://pocket-detective.vercel.app/", "label": "Live Demo" }
+    ],
+    "featured": true
+  },
+  {
+    "slug": "student-performance-predictor",
+    "path": "./ml/student_performance.ipynb",
+    "title": "Student Performance Predictor",
+    "description": "End-to-end machine learning regression pipeline predicting student exam scores from 13 numerical and categorical features. Compared four models (Linear Regression, Decision Tree, Random Forest, Gradient Boosting) using MAE, RMSE, R² and 5-fold cross-validation. Selected Linear Regression as the final model (R² = 0.825, MAE = 0.415): the ensemble methods never earned back the complexity they added.",
+    "tags": ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
+    "links": [
+      { "url": "https://github.com/ch1gg5/student-performance-predictor", "label": "Source" }
+    ],
+    "featured": true
+  },
+  {
+    "slug": "focusflow-api",
+    "path": "./api/focus_flow.py",
+    "title": "FocusFlow API",
+    "description": "RESTful productivity analytics API with JWT authentication, SQLAlchemy ORM and PostgreSQL. Built analytics endpoints using SQL aggregation queries for productivity trends, category breakdowns and study streaks.",
+    "tags": ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "JWT"],
+    "links": [
+      { "url": "https://github.com/ch1gg5/FocusFlowApi", "label": "Source" }
+    ],
+    "featured": false
+  },
+  {
+    "slug": "coursework-deadline-optimiser",
+    "path": "./api/deadline_optimiser.java",
+    "title": "Coursework Deadline Optimiser",
+    "description": "Full-stack coursework management app with Spring Boot, PostgreSQL and JWT auth. Scheduling algorithm prioritises study time based on deadline urgency, task difficulty and course weighting. CI/CD deployment via GitHub and Render.",
+    "tags": ["Java", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "JPA"],
+    "links": [
+      { "url": "https://github.com/ch1gg5/Coursework_Deadline_Optimiser", "label": "Source" }
+    ],
+    "featured": false
+  },
+  {
+    "slug": "route-finder",
+    "path": "./algo/route_finder.py",
+    "title": "Loughborough University Route Finder",
+    "description": "A* pathfinding with Euclidean heuristic for optimised campus routing with obstacle avoidance and multi-waypoint support. Graph visualisation using NetworkX and Matplotlib with coordinate-mapped nodes and edge weights.",
+    "tags": ["Python", "A* Search", "NetworkX", "Matplotlib"],
+    "links": [
+      { "url": "https://github.com/ch1gg5", "label": "Source" }
+    ],
+    "featured": false
+  },
+  {
+    "slug": "notion-pdf-exporter",
+    "path": "./tools/notion_exporter.js",
+    "title": "Notion PDF Exporter",
+    "description": "Native macOS app that batch-converts an entire exported Notion workspace to PDFs, preserving folder structure, formatting, callouts and tables. Runs 100% locally: no subscription, no account, no data leaving the machine.",
+    "tags": ["Electron", "JavaScript", "macOS"],
+    "links": [
+      { "url": "https://github.com/ch1gg5/notion-pdf-exporter", "label": "Source" },
+      { "url": "https://ch1gg5.github.io/notion-pdf-exporter/", "label": "Website" }
+    ],
+    "featured": false
+  },
+  {
+    "slug": "ai-study-assistant",
+    "path": "./mobile/study_assistant.dart",
+    "title": "AI Study Assistant",
+    "description": "Flutter mobile app that turns uploaded lecture-note PDFs into structured study material: summaries, key topics, flashcards and quiz questions, via a FastAPI backend and the Gemini API, with Firebase auth and a PostgreSQL-backed analysis history.",
+    "tags": ["Flutter", "FastAPI", "Gemini API", "Firebase", "PostgreSQL"],
+    "links": [
+      { "url": "https://github.com/ch1gg5/ai-study-assistant", "label": "Source" }
+    ],
+    "featured": false
+  },
+  {
+    "slug": "led-controller",
+    "path": "./macos/led_controller.swift",
+    "title": "LEDController",
+    "description": "Native macOS menu-bar app for Bluetooth LE LED strip control, with real-time screen-sync lighting powered by ScreenCaptureKit, K-means dominant-colour extraction and Apple Vision scene classification.",
+    "tags": ["Swift", "SwiftUI", "Apple Vision", "CoreBluetooth"],
+    "links": [
+      { "url": "https://github.com/ch1gg5/LEDController", "label": "Source" }
+    ],
+    "featured": false
+  },
+  {
+    "slug": "volume-controller",
+    "path": "./macos/volume_controller.swift",
+    "title": "VolumeController",
+    "description": "Menu-bar utility that controls multiple macOS audio output devices independently via CoreAudio's HAL directly: no virtual driver or kernel extension required, unlike alternatives such as BackgroundMusic.",
+    "tags": ["Swift", "CoreAudio", "macOS"],
+    "links": [
+      { "url": "https://github.com/ch1gg5/VolumeController", "label": "Source" }
+    ],
+    "featured": false
+  }
+]

@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+---
+<article class="post-sheet wrap">
+  <a href="/blog/" class="back-link fade-in">← All field notes</a>
+
+  <header class="post-header fade-in">
+    <p class="sheet-label">LOG #{{ collections.posts | logNumber({ url: page.url }) }}</p>
+    <h1>{{ title }}</h1>
+    <p class="post-meta">
+      <span>{{ page.date | postDate }}</span>
+      <span aria-hidden="true">·</span>
+      <span>{{ content | readingTime }}</span>
+      {% if tags %}
+        <span aria-hidden="true">·</span>
+        {% for tag in tags %}{% if tag != "posts" %}<span class="post-tag">{{ tag }}</span>{% endif %}{% endfor %}
+      {% endif %}
+    </p>
+  </header>
+
+  {% set label = "TRANSCRIPT" %}
+  {% include "partials/dimension-divider.njk" %}
+
+  <div class="prose fade-in">
+    {{ content | safe }}
+  </div>
+
+  <a href="/blog/" class="back-link fade-in">← All field notes</a>
+</article>

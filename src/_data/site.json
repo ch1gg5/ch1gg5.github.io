@@ -1,0 +1,17 @@
+{
+  "title": "Daniel Chigbu",
+  "shortTitle": "ch1gg5",
+  "description": "Daniel Chigbu, Founder & Software Engineer building Kaidoro and Computer Science student at Loughborough University. Blueprints, field notes, and shipped projects.",
+  "author": "Daniel Chigbu",
+  "cv": "/Daniel_Chigbu_CV.pdf",
+  "nav": [
+    { "label": "Projects", "href": "/projects/" },
+    { "label": "Blog", "href": "/blog/" },
+    { "label": "About", "href": "/about/" }
+  ],
+  "social": {
+    "github": "https://github.com/ch1gg5",
+    "linkedin": "https://www.linkedin.com/in/danchigbu/",
+    "email": "d.j.chigbu@gmail.com"
+  }
+}

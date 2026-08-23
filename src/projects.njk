@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Projects
+description: "A selection of Daniel Chigbu's technical work: architectural complexity, performance, and clean code."
+---
+<header class="page-header">
+  <div class="wrap">
+    <p class="sheet-label fade-in">SHEET 02 · DEPLOYMENTS</p>
+    <h1 class="fade-in">All Projects</h1>
+    <p class="page-desc fade-in">Selected works demonstrating architectural complexity, performance
+      optimization, and clean code principles.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="panel-grid stagger-children">
+      {% for project in projects %}
+        <div class="fade-in" style="--i:{{ loop.index0 }}">
+          {% include "partials/project-card.njk" %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

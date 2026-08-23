@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Blog
+description: Field notes on personal projects, algorithms, and things Daniel Chigbu has been building.
+---
+<header class="page-header">
+  <div class="wrap">
+    <p class="sheet-label fade-in">SHEET 03 · FIELD NOTES</p>
+    <h1 class="fade-in">Blog</h1>
+    <p class="page-desc fade-in">Notes on personal projects and research, written up after the build,
+      not instead of it.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="panel-grid two-col stagger-children">
+      {% for post in collections.posts | reverse %}
+        <div class="fade-in" style="--i:{{ loop.index0 }}">
+          {% include "partials/post-card.njk" %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

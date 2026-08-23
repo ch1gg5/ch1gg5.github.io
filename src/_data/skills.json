@@ -1,0 +1,99 @@
+{
+  "languages": [
+    { "name": "Java", "pct": 90 },
+    { "name": "Python", "pct": 85 },
+    { "name": "SQL", "pct": 80 },
+    { "name": "HTML / CSS", "pct": 70 },
+    { "name": "C", "pct": 60 }
+  ],
+  "frameworks": [
+    "Spring Boot",
+    "Spring Security",
+    "FastAPI",
+    "React",
+    "JPA / Hibernate",
+    "Apache Kafka",
+    "Gemini API",
+    "SQLAlchemy"
+  ],
+  "infra": [
+    {
+      "title": "PostgreSQL, MySQL & SQLite",
+      "description": "Relational schema design, migrations, query optimization, and data modeling."
+    },
+    {
+      "title": "Docker, Git & CI/CD",
+      "description": "Containerization, GitHub Actions pipelines, Render & Vercel deployments."
+    },
+    {
+      "title": "Testing & Tooling",
+      "description": "JUnit, PyTest, Postman, Maven, IntelliJ IDEA, PyCharm."
+    }
+  ],
+  "concepts": [
+    "Data Structures & Algorithms",
+    "RESTful API Design",
+    "Object-Oriented Design",
+    "Test-Driven Development",
+    "Machine Learning & Statistics"
+  ],
+  "learning": {
+    "title": "Machine Learning & Quantitative Finance",
+    "description": "Building out my foundations in statistics, machine learning and mathematical problem solving, with a growing interest in applying quantitative thinking to real-world problems, alongside shipping Kaidoro's AI integrations and cloud-hosted backend."
+  },
+  "timeline": [
+    {
+      "log": "005",
+      "date": "SINCE AUG 2026",
+      "title": "Founder & Software Engineer",
+      "org": "Kaidoro",
+      "points": [
+        "Building an AI-powered planning platform that turns learning and career goals into phased, adaptive roadmaps.",
+        "Built full-stack: React/TypeScript frontend, Python/FastAPI backend, PostgreSQL, authentication, and Gemini API integration.",
+        "Shipped all 8 planned build phases with 675 passing tests."
+      ]
+    },
+    {
+      "log": "004",
+      "date": "JULY 2026",
+      "title": "Google Student AI Hackathon",
+      "org": "Google, London",
+      "points": [
+        "Selected as 1 of 52 participants from 1,000 applicants for a Google-run AI hackathon.",
+        "Led a 5-person team as project manager, defining product scope, system architecture and tech stack under a 3-hour build constraint.",
+        "Directed AI-assisted development through an AI Studio → Antigravity → Google Cloud workflow, shipping a working demo using Gemini multimodal vision.",
+        "Built and presented the business case, sizing the market opportunity ($14.8B TAM, $3.53B SAM), and defined a go-to-market strategy alongside the technical demo."
+      ]
+    },
+    {
+      "log": "003",
+      "date": "JULY 2026",
+      "title": "Software Engineering · Job Simulation",
+      "org": "JP Morgan Chase (Forage)",
+      "points": [
+        "Integrated Kafka into a Spring Boot microservice to consume and deserialize high-volume transaction messages using a configurable topic and embedded Kafka test framework.",
+        "Developed a REST endpoint for querying user balances, returning JSON responses through a Spring controller while maintaining clean architectural boundaries."
+      ]
+    },
+    {
+      "log": "002",
+      "date": "JUNE 2026",
+      "title": "Software Engineering · Job Simulation",
+      "org": "Quantium (Forage)",
+      "points": [
+        "Developed an interactive Dash application that enabled the client to assess the impact of price changes on sales and profitability.",
+        "Implemented a test suite to verify the Dash application and a bash script to automatically run the tests."
+      ]
+    },
+    {
+      "log": "001",
+      "date": "2025 – 2029",
+      "title": "B.Sc. Computer Science",
+      "org": "Loughborough University",
+      "points": [
+        "First Year Grade: First Class Honours.",
+        "First-year undergraduate. Coursework covering data structures, algorithms, systems programming, and software engineering principles. Building full-stack projects independently alongside studies."
+      ]
+    }
+  ]
+}

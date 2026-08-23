@@ -1,0 +1,27 @@
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner wrap">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-mark" aria-hidden="true">
+        <span class="reg-mark tl"></span><span class="reg-mark tr"></span>
+        <span class="reg-mark bl"></span><span class="reg-mark br"></span>
+        +
+      </span>
+      {{ site.shortTitle }}
+    </a>
+    <div class="nav-links" id="nav-links">
+      {% for item in site.nav %}
+        <a href="{{ item.href }}"{% if page.url == item.href %} class="active" aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+    </div>
+    <div class="nav-right">
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+      <a href="{{ site.cv }}" class="btn btn-redline btn-sm" id="cv-link" target="_blank" rel="noopener">Resume →</a>
+    </div>
+  </div>
+</nav>

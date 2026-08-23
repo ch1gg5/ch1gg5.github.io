@@ -1,0 +1,133 @@
+---
+layout: layouts/base.njk
+title: About
+description: "Daniel Chigbu: Founder & Software Engineer building Kaidoro, and a Computer Science student at Loughborough University."
+---
+<header class="page-header">
+  <div class="wrap">
+    <p class="sheet-label fade-in">SHEET 04 · PROFILE</p>
+    <h1 class="fade-in">About</h1>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap about-grid">
+    <div class="about-bio">
+      <p class="fade-in">
+        I'm a Computer Science student at Loughborough University (graduating 2029) interested in software
+        engineering, AI/ML, and quantitative finance. I enjoy learning by taking an idea from a problem or
+        concept and turning it into working software.
+      </p>
+      <p class="fade-in">
+        I'm currently building <strong>Kaidoro</strong>, an AI-powered planning platform that turns ambitious
+        goals into structured, adaptive roadmaps, built full-stack with React/TypeScript, a Python/FastAPI
+        backend, PostgreSQL, authentication and AI integrations.
+      </p>
+      <p class="fade-in">
+        Alongside that, I spend time outside lectures shipping backend systems (layered Spring Boot
+        architectures, relational schemas, and the CI/CD pipelines that deploy them) and developing my
+        foundations in algorithms, statistics and machine learning.
+      </p>
+      <div class="about-pills fade-in">
+        <span>Java</span><span>Python</span><span>C</span><span>SQL</span>
+        <span>Spring Boot</span><span>FastAPI</span><span>React</span><span>PostgreSQL</span>
+        <span>Docker</span><span>Kafka</span><span>Gemini API</span><span>Git</span>
+        <span>Scikit-learn</span><span>Pandas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {% set label = "SKILLS MATRIX" %}
+    {% include "partials/dimension-divider.njk" %}
+
+    <div class="skills-grid stagger-children">
+      <div class="schematic-panel skill-panel fade-in" style="--i:0">
+        <span class="reg-mark tl"></span><span class="reg-mark tr"></span>
+        <span class="reg-mark bl"></span><span class="reg-mark br"></span>
+        <div class="panel-header"><span class="panel-path">./skills/languages.json</span></div>
+        <div class="panel-body">
+          <div class="lang-grid">
+            {% for lang in skills.languages %}
+              <div class="lang-item">
+                <div class="lang-item-head">
+                  <span class="lang-name">{{ lang.name }}</span>
+                  <span class="lang-pct">{{ lang.pct }}%</span>
+                </div>
+                <div class="lang-bar"><div class="lang-bar-fill" data-width="{{ lang.pct }}"></div></div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="schematic-panel skill-panel fade-in" style="--i:1">
+        <span class="reg-mark tl"></span><span class="reg-mark tr"></span>
+        <span class="reg-mark bl"></span><span class="reg-mark br"></span>
+        <div class="panel-header"><span class="panel-path">./skills/frameworks.json</span></div>
+        <div class="panel-body">
+          <div class="fw-grid">
+            {% for fw in skills.frameworks %}<div class="fw-pill">{{ fw }}</div>{% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="schematic-panel skill-panel fade-in" style="--i:2">
+        <span class="reg-mark tl"></span><span class="reg-mark tr"></span>
+        <span class="reg-mark bl"></span><span class="reg-mark br"></span>
+        <div class="panel-header"><span class="panel-path">./skills/infra.json</span></div>
+        <div class="panel-body">
+          <div class="infra-list">
+            {% for item in skills.infra %}
+              <div class="infra-item">
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.description }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="schematic-panel skill-panel fade-in" style="--i:3">
+        <span class="reg-mark tl"></span><span class="reg-mark tr"></span>
+        <span class="reg-mark bl"></span><span class="reg-mark br"></span>
+        <div class="panel-header"><span class="panel-path">./skills/concepts.json</span></div>
+        <div class="panel-body">
+          <div class="concepts-grid">
+            {% for concept in skills.concepts %}
+              <div class="concept-item">{{ concept }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="learning-banner fade-in" style="--i:4">
+        <div class="learning-badge">Currently learning</div>
+        <h3>{{ skills.learning.title }}</h3>
+        <p>{{ skills.learning.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {% set label = "EXECUTION LOG" %}
+    {% include "partials/dimension-divider.njk" %}
+
+    <div class="timeline">
+      {% for item in skills.timeline %}
+        <div class="timeline-item fade-in" style="--i:{{ loop.index0 }}">
+          <p class="sheet-label">LOG #{{ item.log }} · {{ item.date }}</p>
+          <h3>{{ item.title }}</h3>
+          <p class="timeline-org">{{ item.org }}</p>
+          <ul class="timeline-points">
+            {% for point in item.points %}<li>{{ point }}</li>{% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

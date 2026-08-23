@@ -1,0 +1,24 @@
+<svg viewBox="0 0 340 116" class="schematic-diagram" aria-hidden="true">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="var(--blue)" />
+    </marker>
+  </defs>
+
+  <rect class="node" x="10" y="20" width="84" height="42" />
+  <text class="node-label" x="52" y="45">CLIENT</text>
+
+  <rect class="node" x="128" y="20" width="84" height="42" />
+  <text class="node-label" x="170" y="45">API</text>
+
+  <rect class="node" x="246" y="20" width="84" height="42" />
+  <text class="node-label" x="288" y="45">DATABASE</text>
+
+  <path class="draw-line" d="M94,41 H128" marker-end="url(#arrow)" />
+  <path class="draw-line" d="M212,41 H246" marker-end="url(#arrow)" />
+
+  <path class="draw-line dim" d="M10,86 H330" />
+  <path class="draw-line dim" d="M10,80 V92" />
+  <path class="draw-line dim" d="M330,80 V92" />
+  <text class="node-label" x="170" y="108">FIG. 01 · SYSTEM OVERVIEW</text>
+</svg>

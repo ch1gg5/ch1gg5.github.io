@@ -1,0 +1,14 @@
+{
+  "name": "ch1gg5.github.io",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Daniel Chigbu — portfolio and field notes",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "luxon": "^3.5.0"
+  }
+}
