@@ -36,8 +36,7 @@ src/                          Everything Eleventy reads
 ├── _data/                     Site content: nav/footer links, projects, skills
 ├── _includes/layouts/         Shared page shell + post layout
 ├── _includes/partials/        Nav, footer, cards, dividers, the hero diagram
-├── assets/                    CSS, JS, images
-└── Daniel_Chigbu_CV.pdf       My CV — kept here for reference, not published to the site
+└── assets/                    CSS, JS, images
 ```
 
 ## Local development
