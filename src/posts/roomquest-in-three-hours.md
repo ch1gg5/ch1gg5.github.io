@@ -1,7 +1,7 @@
 ---
 title: "Building RoomQuest in Three Hours"
 date: 2026-07-18
-description: "Field notes from leading a 5-person team at the Google Student AI Hackathon: scoping under a 3-hour build constraint, and shipping a Gemini multimodal-vision demo through an AI Studio → Antigravity → Google Cloud workflow."
+description: "Field notes from leading a 5-person team at the Google Student AI Hackathon: scoping under a 4-hour build constraint, and shipping a Gemini multimodal-vision demo."
 draft: false
 tags: ["posts", "hackathon", "ai"]
 ---
@@ -51,7 +51,7 @@ We used its **multimodal vision capabilities** to understand the room and later 
 
 For the clues themselves, we prompted Gemini to act as a **gamemaster**, generating poetic and rhyming riddles based on the objects it identified.
 
-Our development workflow moved through **Stitch → AI Studio → Antigravity → Google Cloud**, with React on the frontend and Node.js on the backend.
+Our development workflow moved through **Stitch → AI Studio → Antigravity → Vercel**, with React on the frontend and Node.js on the backend.
 
 The challenge was getting these pieces working together quickly enough to have something we could actually show.
 
