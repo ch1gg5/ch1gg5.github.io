@@ -4,7 +4,7 @@
 
 **Computer Science @ Loughborough University**
 
-[ch1gg5.github.io](https://ch1gg5.github.io) · [CV](./src/Daniel_Chigbu_CV.pdf) · [LinkedIn](https://www.linkedin.com/in/danchigbu/) · [d.j.chigbu@gmail.com](mailto:d.j.chigbu@gmail.com)
+[ch1gg5.github.io](https://ch1gg5.github.io) · [LinkedIn](https://www.linkedin.com/in/danchigbu/) · [d.j.chigbu@gmail.com](mailto:d.j.chigbu@gmail.com)
 
 </div>
 
@@ -37,7 +37,7 @@ src/                          Everything Eleventy reads
 ├── _includes/layouts/         Shared page shell + post layout
 ├── _includes/partials/        Nav, footer, cards, dividers, the hero diagram
 ├── assets/                    CSS, JS, images
-└── Daniel_Chigbu_CV.pdf       My CV — powers the Resume buttons
+└── Daniel_Chigbu_CV.pdf       My CV — kept here for reference, not published to the site
 ```
 
 ## Local development
@@ -64,11 +64,25 @@ Post body in Markdown.
 
 Push to `main` — GitHub Actions builds and deploys it, no other steps needed.
 
-## Updating the CV
+## Drafts
 
-Replace `src/Daniel_Chigbu_CV.pdf` (same filename) and push. The Resume buttons across the site link
-straight to that file; if it's ever missing, the site detects that automatically and disables the buttons
-rather than breaking.
+Add `draft: true` to a post's front matter to keep it off the live site:
+
+```yaml
+---
+title: "Something I'm Still Writing"
+date: 2026-08-24
+description: "..."
+draft: true
+tags: ["posts"]
+---
+```
+
+A draft gets no page and stays out of `collections.posts`, so it's absent from `/blog/` and the homepage
+feed even once pushed. `npm start` still renders drafts locally — marked with a red **Draft** tag — so
+they can be previewed while being written. Delete the `draft: true` line to publish.
+
+The flag lives in `src/posts/posts.11tydata.js`.
 
 ## Deployment
 

@@ -7,20 +7,6 @@
 
   const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---------- CV existence check ----------
-  async function initCvCheck() {
-    const cvLink = document.getElementById('cv-link');
-    if (!cvLink) return;
-    try {
-      const res = await fetch('/Daniel_Chigbu_CV.pdf', { method: 'HEAD', cache: 'no-store' });
-      if (!res.ok) throw new Error('missing');
-    } catch (e) {
-      cvLink.setAttribute('aria-disabled', 'true');
-      cvLink.href = '#';
-      cvLink.textContent = 'Resume coming soon';
-    }
-  }
-
   // ---------- Mobile nav toggle ----------
   function initMobileNav() {
     const hamburger = document.getElementById('nav-hamburger');
@@ -123,7 +109,6 @@
   }
 
   function init() {
-    initCvCheck();
     initMobileNav();
     initScrollAnimations();
     initSmoothScroll();

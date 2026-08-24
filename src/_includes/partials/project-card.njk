@@ -3,6 +3,7 @@
   <span class="reg-mark bl"></span><span class="reg-mark br"></span>
   <div class="panel-header">
     <span class="panel-path">{{ project.path }}</span>
+    {% if project.date %}<span class="panel-meta">{{ project.date }}</span>{% endif %}
   </div>
   <div class="panel-body">
     <h3>{{ project.title }}</h3>

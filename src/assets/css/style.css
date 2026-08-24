@@ -532,6 +532,25 @@ nav, main, footer { position: relative; z-index: 1; }
   border-radius: 100px;
   color: var(--blue);
 }
+.empty-state {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  text-align: center;
+  padding: 48px 16px;
+  border: 1px dashed var(--blue-line);
+}
+.draft-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--redline);
+  background: var(--redline-dim);
+  color: var(--redline);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
 
 .prose { font-size: 1rem; color: var(--ink); }
 .prose h2 { font-size: 1.3rem; margin: 40px 0 14px; }

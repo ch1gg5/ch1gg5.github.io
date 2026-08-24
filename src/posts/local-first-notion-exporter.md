@@ -2,6 +2,7 @@
 title: "Building a Local-First Notion Exporter"
 date: 2026-07-15
 description: "Notion's built-in export handles one page fine. Converting an entire workspace with nested pages to PDF, without a subscription or a server, needed its own tool."
+draft: true
 tags: ["posts", "tools", "electron"]
 ---
 Notion's own PDF export works well for a single page. Point it at a workspace with nested subpages, though, and it turns into a manual, page-by-page slog: export one, find the next, repeat. I wanted every page in a workspace as a properly organised folder of PDFs, and I didn't want to pay a third-party service a subscription to get it, or hand my notes to someone else's server to do it.

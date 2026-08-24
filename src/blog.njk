@@ -14,12 +14,16 @@ description: Field notes on personal projects, algorithms, and things Daniel Chi
 
 <section class="section">
   <div class="wrap">
-    <div class="panel-grid two-col stagger-children">
-      {% for post in collections.posts | reverse %}
-        <div class="fade-in" style="--i:{{ loop.index0 }}">
-          {% include "partials/post-card.njk" %}
-        </div>
-      {% endfor %}
-    </div>
+    {% if collections.posts | length %}
+      <div class="panel-grid two-col stagger-children">
+        {% for post in collections.posts | reverse %}
+          <div class="fade-in" style="--i:{{ loop.index0 }}">
+            {% include "partials/post-card.njk" %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="empty-state fade-in">No entries published yet — field notes in progress.</p>
+    {% endif %}
   </div>
 </section>

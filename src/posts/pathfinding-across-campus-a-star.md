@@ -2,6 +2,7 @@
 title: "Pathfinding Across Campus: A* with a Euclidean Heuristic"
 date: 2026-05-20
 description: "Why A* beats plain Dijkstra on a bounded campus graph, why the Euclidean-distance heuristic is admissible here, and how obstacle avoidance and multi-waypoint routing got modeled in NetworkX."
+draft: true
 tags: ["posts", "algorithms"]
 ---
 The Loughborough Route Finder started as a simple question: what's the fastest walking route between two buildings on campus, given that some paths are blocked or slower than others? The honest answer is "just use Google Maps," but the point was never the destination: it was building and understanding the pathfinding underneath it.

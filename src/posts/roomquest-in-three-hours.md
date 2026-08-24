@@ -2,6 +2,7 @@
 title: "Building RoomQuest in Three Hours"
 date: 2026-07-18
 description: "Field notes from leading a 5-person team at the Google Student AI Hackathon: scoping under a 3-hour build constraint, and shipping a Gemini multimodal-vision demo through an AI Studio → Antigravity → Google Cloud workflow."
+draft: true
 tags: ["posts", "hackathon", "ai"]
 ---
 Three hours is not enough time to build anything, which turns out to be exactly the constraint you want. I was one of 52 participants selected from roughly 1,000 applicants for the Google Student AI Hackathon in London, and once there our team of five had a room, a whiteboard, and a hard stop. RoomQuest, an app that looks at a photo of a physical room and generates a scavenger-hunt-style puzzle clue grounded in what it actually sees, came out the other side of that window as a working demo.

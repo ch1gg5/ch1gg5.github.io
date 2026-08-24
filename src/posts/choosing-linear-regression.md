@@ -2,6 +2,7 @@
 title: "Why Linear Regression Beat Gradient Boosting"
 date: 2026-08-19
 description: "Comparing four regression models to predict student exam scores, and finding that the simplest one, not the most complex, generalised best."
+draft: true
 tags: ["posts", "machine-learning"]
 ---
 The instinct with a regression problem is to reach for the fanciest model available and let it sort out the relationships in the data. I built the Student Performance Predictor specifically to test that instinct against a dataset it might not deserve: 13 numerical and categorical features (hours studied, attendance, parental involvement, motivation level, teacher quality, and so on) predicting a single exam score between 55 and 100.

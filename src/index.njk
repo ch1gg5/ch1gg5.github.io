@@ -16,7 +16,7 @@ layout: layouts/base.njk
       </p>
       <div class="hero-cta fade-in">
         <a href="/projects/" class="btn btn-blue">View Projects</a>
-        <a href="{{ site.cv }}" class="btn btn-redline" target="_blank" rel="noopener">Resume.pdf →</a>
+        <a href="/about/" class="btn btn-redline">Read the Profile →</a>
       </div>
     </div>
     <div class="hero-right fade-in">
@@ -48,6 +48,7 @@ layout: layouts/base.njk
   </div>
 </section>
 
+{% if collections.posts | length %}
 <section class="section">
   <div class="wrap">
     <div class="section-header">
@@ -68,6 +69,7 @@ layout: layouts/base.njk
     </div>
   </div>
 </section>
+{% endif %}
 
 <section class="section about-teaser">
   <div class="wrap">

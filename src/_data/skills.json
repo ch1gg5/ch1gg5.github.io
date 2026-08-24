@@ -62,7 +62,7 @@
       "points": [
         "Selected as 1 of 52 participants from 1,000 applicants for a Google-run AI hackathon.",
         "Led a 5-person team as project manager, defining product scope, system architecture and tech stack under a 3-hour build constraint.",
-        "Directed AI-assisted development through an AI Studio → Antigravity → Google Cloud workflow, shipping a working demo using Gemini multimodal vision.",
+        "Directed AI-assisted development through an AI Studio → Antigravity → Google Cloud workflow, coordinating task delegation to ship a working demo that generates room-aware puzzle clues via Gemini multimodal vision in under 5 seconds.",
         "Built and presented the business case, sizing the market opportunity ($14.8B TAM, $3.53B SAM), and defined a go-to-market strategy alongside the technical demo."
       ]
     },
@@ -83,13 +83,13 @@
       "org": "Quantium (Forage)",
       "points": [
         "Developed an interactive Dash application that enabled the client to assess the impact of price changes on sales and profitability.",
-        "Implemented a test suite to verify the Dash application and a bash script to automatically run the tests."
+        "Implemented a test suite to verify the Dash application is working and a bash script to automatically run the test suite."
       ]
     },
     {
       "log": "001",
-      "date": "2025 – 2029",
-      "title": "B.Sc. Computer Science",
+      "date": "SEPT 2025 – JUNE 2029",
+      "title": "B.Sc. Computer Science with Honours",
       "org": "Loughborough University",
       "points": [
         "First Year Grade: First Class Honours.",

@@ -2,6 +2,7 @@
 title: "Designing FocusFlow's Analytics Endpoints"
 date: 2026-07-05
 description: "REST resource design, JWT auth in FastAPI, SQLAlchemy models, and the SQL aggregation behind FocusFlow's productivity streaks and category breakdowns."
+draft: true
 tags: ["posts", "backend", "api-design"]
 ---
 FocusFlow is a productivity-tracking API: log study sessions, tag them by category, and get back trends over time. The interesting engineering wasn't the CRUD (create a session, list your sessions); it was the analytics layer sitting on top of it, and the decision to build the whole thing in FastAPI rather than reaching for Spring Boot, which is where most of my other backend work lives.
